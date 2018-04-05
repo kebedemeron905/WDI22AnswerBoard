@@ -5,16 +5,20 @@ body {
   text-align: center; */
 }
 
+h1 a {
+  color: white;
+  font-weight: 400;
+}
+
 .list {
   margin: 10px 0;
-  width: 100%;
+  width: 97%;
   height: 120px;
   text-align: left;
   padding: 10px 20px;
   border-style: solid;
   border-width: 2px;
   border-color: lightseagreen;
-  padding: 10px;;
 }
 
 .list span {
@@ -28,6 +32,14 @@ h1 {
   margin: 0;
   padding: 30px;
   color: white;
+  font-weight: 400;
+}
+
+h2 {
+  margin: 0;
+  padding-top: 15px;
+  padding-bottom: 5px;
+  font-weight: 400;
 }
 
 .list:hover {
@@ -57,4 +69,73 @@ a {
   background: darkgrey;
   text-decoration: underline;
   cursor: pointer;
+}
+
+.submit {
+  font-size: 20px;
+  margin: 7px 0px;
+  width: 150px;
+  height: 30px;
+}
+
+.submit:hover {
+  cursor: pointer;
+}
+
+.box {
+  border-style: solid;
+  border-width: 2px;
+  border-color: mediumaquamarine;
+  margin: 20px 0;
+  padding: 5px 15px;
+}
+
+.edit {
+  color: darkgrey;
+}
+
+form.edit {
+  display:inline;
+}
+
+/* form.edit {
+  color: black;
+} */
+
+h3 {
+  font-weight: 400;
+}
+
+.new {
+  display: block;
+  margin: 7px 0;
+}
+
+input.new.answer {
+  width: 95%;
+  height: 100px;
+}
+
+.name {
+  width: 95%;
+}
+
+.likes {
+  display: none;
+}
+
+.new .submit {
+  margin: 10px auto;
+  display: block;
+}
+
+.newquestion {
+  width: 95%;
+  height: 40px;
+  display: block;
+  margin: 10px 0;
+}
+
+.details {
+  height: 100px;
 }

@@ -1,41 +1,45 @@
 <h1><a href="/">WDI 22 Answer Board</a></h1>
 
-<h2>{{question.subject}}</h2>
-<p>{{question.details}}</p>
-<form action="/{{question.id}}?_method=put" method="post">
-<label>Subject:</label>
+<div class="box">
+<h2><span style="font-weight:700">Subject: </span>{{question.subject}}</h2>
+<p><span style="font-weight:700">Details: </span>{{question.details}}</p>
+<h3 class="edit">Edit the question here:</h3>
+<form class="edit" action="/{{question.id}}?_method=put" method="post">
+<label class="edit">Subject:</label>
 <input type="text" name="subject">
-<label>Details:</label>
+<label class="edit">Details:</label>
 <input type="text" name="details">
-<label>Date:</label>
+<label class="edit">Date:</label>
 <input type="text" name="date">
-<label>Author:</label>
+<label class="edit">Author:</label>
 <input type="text" name="asker">
-<input type="submit" value="Update Question">
+<input class="submit edit" type="submit" value="Update Question">
 </form>
-<form action="/{{question.id}}?_method=delete" method="post">
-<input type="submit" value="Delete Question">
+<form class="edit" action="/{{question.id}}?_method=delete" method="post">
+<input class="submit edit" type="submit" value="Delete Question">
 </form>
+</div>
 
-
+<div class="box">
 <h2>Answers</h2>
-
 {{#each question.answers }}
-<p>Answer: {{text}}</p>
-<p>Answered by: {{name}}</p>
-<p>Likes: {{likes}}</p>
+<p><span style="font-weight:700">Answer: </span>{{text}}</p>
+<p><span style="font-weight:700">Answered by: </span>{{name}}</p>
 <form action="/{{../question.id}}/{{id}}?_method=delete" method="post">
-<input type="submit" value="Delete Answer">
+<input class="submit" type="submit" value="Delete Answer">
 </form>
 {{/each}}
+</div>
 
+<div class="box">
 <h2>Add an answer:</h2>
-<form action="/{{question._id}}" method="post">
+<form class="new" action="/{{question._id}}" method="post">
 <label>Your answer:</label>
-<input type="text" name="text">
+<input class="new answer" type="text" name="text">
 <label>Your name:</label>
-<input type="text" name="name">
-<label>Likes:</label>
-<input type="text" name="likes">
-<input type="submit" value="Submit">
+<input class="new name" type="text" name="name">
+<label class="new likes">Likes:</label>
+<input class="new likes" type="text" name="likes">
+<input class="submit new" type="submit" value="Submit">
 </form>
+</div>
