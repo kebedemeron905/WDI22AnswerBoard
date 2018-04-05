@@ -40,4 +40,18 @@ router.post('/:id', (req, res) => {
     })
 })
 
+// router.delete('/:id', (req, res) => {
+//   Question.findOneAndRemove({_id: req.params.id})
+//     .then(() => {
+//       res.redirect('/')
+//     })
+// })
+
+// router.delete('/:id', (req, res) => {
+//   Question.answers.pull({_id: req.params.id})
+//     .then(() => {
+//       res.redirect('/')
+//     })
+// })
+
 module.exports = router
