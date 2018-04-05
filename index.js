@@ -8,6 +8,9 @@ const app = express()
 app.set('view engine', 'hbs')
 app.use(parser.urlencoded({ extended: true }))
 app.use(methodOverride('_method'))
+
+app.use('/assets', express.static('public'))
+
 app.use('/', questionsController)
 
 app.listen(4004, () => {

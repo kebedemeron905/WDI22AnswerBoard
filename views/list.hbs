@@ -1,9 +1,13 @@
 <h1>WDI 22 Answer Board</h1>
+
 {{#each questions as |question index|}}
+<div class="list">
 <h2><a href={{question._id}}>{{question.subject}}</a></h2>
 <span>{{question.date}}</span>
+<span>Asked by: {{question.asker}}</span>
+</div>
 {{/each}}
 
 <form action="/new" method="get">
-  <input type="submit" value="New Question">
+  <input class="button new" type="submit" value="New Question">
 </form>
