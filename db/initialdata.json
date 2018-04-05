@@ -1,0 +1,51 @@
+[
+  {
+    "subject": "Schema with subdocuments",
+    "details": "I'm making a schema for a MEHN stack and I have subdocuments in my data. How do I represent that in the Schema?",
+    "date": "4/5/2018",
+    "asker": "Jason",
+    "answers": [
+      {
+        "answer": "You'll figure it out soon!",
+        "name": "Meron",
+        "likes": 0
+      },
+      {
+        "answer": "I have no idea how to help you",
+        "name": "Jason",
+        "likes": 0
+      }
+    ]
+  },
+  {
+    "subject": "Action in html forms",
+    "details": "I don't quite understand the action section in the HTML form that we do in handlebars. Is that like a link it will go to?",
+    "date": "4/5/2018",
+    "asker": "Jason",
+    "answers": [
+      {
+        "answer": "Let's wait to find out from Ali and James",
+        "name": "Meron",
+        "likes": 0
+      }
+    ]
+  },
+  {
+    "subject": "TypeError: Router.use() requires middleware function but got a Object",
+    "details": "I made the inded but I get this error when I run nodemon: TypeError: Router.use() requires middleware function but got a Object. It goes away if I comment out the connection to the controller.",
+    "date": "4/5/2018",
+    "asker": "Meron",
+    "answers": [
+      {
+        "answer": "Oh, you have to export the controller or else it won't know what you're connecting to.",
+        "name": "Ali",
+        "likes": 0
+      },
+      {
+        "answer": "Ali got it!",
+        "name": "Jason",
+        "likes": 0
+      }
+    ]
+  }
+]
