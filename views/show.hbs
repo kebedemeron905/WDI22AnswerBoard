@@ -2,8 +2,14 @@
 <p>{{question.details}}</p>
 <h2>Answers</h2>
 
-{{#each question.answers as |a index|}}
-<p>{{answer}}</p>
+{{#each question.answers as |answer index|}}
+<p>{{text}}</p>
 <p>Answered by: {{name}}</p>
 <p>Likes: {{likes}}</p>
 {{/each}}
+
+<h2>Add an answer:</h2>
+<form action="/{{question._id}}" method="post">
+<input type="text" name="answer">
+<input type="submit" value="Submit">
+</form>

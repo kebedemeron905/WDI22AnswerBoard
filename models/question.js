@@ -1,7 +1,7 @@
 const mongoose = require('../db/connection.js')
 
 const AnswerSchema = new mongoose.Schema({
-  answer: String,
+  text: String,
   name: String,
   likes: Number
 })

@@ -25,4 +25,11 @@ router.get('/:id', (req, res) => {
     })
 })
 
+router.post('/:id', (req, res) => {
+  Question.answers.create(req.body)
+    .then(() => {
+      res.redirect(`/${req.params.id}`)
+    })
+})
+
 module.exports = router
