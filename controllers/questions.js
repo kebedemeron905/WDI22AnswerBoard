@@ -40,15 +40,34 @@ router.post('/:id', (req, res) => {
     })
 })
 
-// router.delete('/:id', (req, res) => {
-//   Question.findOneAndRemove({_id: req.params.id})
-//     .then(() => {
-//       res.redirect('/')
-//     })
-// })
+router.delete('/:id', (req, res) => {
+  Question.findOneAndRemove({_id: req.params.id})
+    .then(() => {
+      res.redirect('/')
+    })
+})
+
+router.delete('/:id/:answerid', (req, res) => {
+  Question.findOne({_id: req.params.id})
+    .then((question) => {
+      question.answers.pull(req.params.answerid)
+      question.save()
+        .then(() => {
+          res.redirect(`/${req.params.id}`)
+        })
+    })
+})
 
 // router.delete('/:id', (req, res) => {
-//   Question.answers.pull({_id: req.params.id})
+//   Question.answers.update(
+//     {},
+//     {$pull: {_id: req.params.id}}
+//   )
+//     .then((question) => question.save())
+//     .then(() => res.redirect('/'))
+// })
+
+//   answers.pull({_id: req.params.id})
 //     .then(() => {
 //       res.redirect('/')
 //     })

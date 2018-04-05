@@ -11,8 +11,8 @@
 <p>Answered by: {{name}}</p>
 <p>Likes: {{likes}}</p>
 <p>ID: {{id}}</p>
-<p>Question ID: {{question.id}}</p>
-<form action="/{{question.id}}/{{id}}?_method=delete" method="post">
+<p>Question ID: {{../question.id}}</p>
+<form action="/{{../question.id}}/{{id}}?_method=delete" method="post">
 <input type="submit" value="Delete Answer">
 </form>
 {{/each}}
