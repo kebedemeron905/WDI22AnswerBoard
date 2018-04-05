@@ -2,9 +2,21 @@
 
 <h2>{{question.subject}}</h2>
 <p>{{question.details}}</p>
+<form action="/{{question.id}}?_method=put" method="post">
+<label>Subject:</label>
+<input type="text" name="subject">
+<label>Details:</label>
+<input type="text" name="details">
+<label>Date:</label>
+<input type="text" name="date">
+<label>Author:</label>
+<input type="text" name="asker">
+<input type="submit" value="Update Question">
+</form>
 <form action="/{{question.id}}?_method=delete" method="post">
 <input type="submit" value="Delete Question">
 </form>
+
 
 <h2>Answers</h2>
 
@@ -12,8 +24,6 @@
 <p>Answer: {{text}}</p>
 <p>Answered by: {{name}}</p>
 <p>Likes: {{likes}}</p>
-<p>ID: {{id}}</p>
-<p>Question ID: {{../question.id}}</p>
 <form action="/{{../question.id}}/{{id}}?_method=delete" method="post">
 <input type="submit" value="Delete Answer">
 </form>

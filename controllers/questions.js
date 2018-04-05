@@ -11,6 +11,18 @@ router.get('/', (req, res) => {
     .then((questions) => res.render('list', {questions}))
 })
 
+router.put('/:id', (req, res) => {
+  Question.findOneAndUpdate({_id: req.params.id}, {
+    subject: req.body.subject,
+    details: req.body.details,
+    date: req.body.date,
+    asker: req.body.asker
+  }, {new: true})
+    .then(question => {
+      res.redirect(`/${req.params.id}`)
+    })
+})
+
 router.get('/new', (req, res) => {
   res.render('new')
 })
