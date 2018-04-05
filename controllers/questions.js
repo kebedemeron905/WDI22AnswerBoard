@@ -1,6 +1,9 @@
 const router = require('express').Router()
 const db = require('../db/connection')
 const Question = require('../models/question.js')
+const AnswerSchema = require('../models/answer.js')
+const mongoose = require('../db/connection.js')
+const Answer = mongoose.model('Answer', AnswerSchema)
 
 router.get('/', (req, res) => {
   Question
@@ -26,9 +29,14 @@ router.get('/:id', (req, res) => {
 })
 
 router.post('/:id', (req, res) => {
-  Question.answers.create(req.body)
-    .then(() => {
-      res.redirect(`/${req.params.id}`)
+  let newAnswer = new Answer(req.body)
+  Question.findById({_id: req.params.id})
+    .then((question) => {
+      question.answers.push(newAnswer)
+      question.save()
+        .then(() => {
+          res.redirect(`/${req.params.id}`)
+        })
     })
 })
 
