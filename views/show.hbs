@@ -1,0 +1,20 @@
+<h2>{{question.subject}}</h2>
+<p>{{question.details}}</p>
+<h2>Answers</h2>
+
+{{#each question.answers as |answer index|}}
+<p>{{text}}</p>
+<p>Answered by: {{name}}</p>
+<p>Likes: {{likes}}</p>
+{{/each}}
+
+<h2>Add an answer:</h2>
+<form action="/{{question._id}}" method="post">
+<label>Your answer:</label>
+<input type="text" name="text">
+<label>Your name:</label>
+<input type="text" name="name">
+<label>Likes:</label>
+<input type="text" name="likes">
+<input type="submit" value="Submit">
+</form>

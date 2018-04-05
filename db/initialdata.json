@@ -6,12 +6,12 @@
     "asker": "Jason",
     "answers": [
       {
-        "answer": "You'll figure it out soon!",
+        "text": "You'll figure it out soon!",
         "name": "Meron",
         "likes": 0
       },
       {
-        "answer": "I have no idea how to help you",
+        "text": "I have no idea how to help you",
         "name": "Jason",
         "likes": 0
       }
@@ -24,7 +24,7 @@
     "asker": "Jason",
     "answers": [
       {
-        "answer": "Let's wait to find out from Ali and James",
+        "text": "Let's wait to find out from Ali and James",
         "name": "Meron",
         "likes": 0
       }
@@ -37,12 +37,12 @@
     "asker": "Meron",
     "answers": [
       {
-        "answer": "Oh, you have to export the controller or else it won't know what you're connecting to.",
+        "text": "Oh, you have to export the controller or else it won't know what you're connecting to.",
         "name": "Ali",
         "likes": 0
       },
       {
-        "answer": "Ali got it!",
+        "text": "Ali got it!",
         "name": "Jason",
         "likes": 0
       }

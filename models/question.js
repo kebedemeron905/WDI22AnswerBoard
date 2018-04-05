@@ -1,10 +1,5 @@
 const mongoose = require('../db/connection.js')
-
-const AnswerSchema = new mongoose.Schema({
-  answer: String,
-  name: String,
-  likes: Number
-})
+const AnswerSchema = require('./answer.js')
 
 const QuestionSchema = new mongoose.Schema({
   subject: String,
