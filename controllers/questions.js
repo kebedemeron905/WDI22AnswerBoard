@@ -16,4 +16,13 @@ router.post('/', (req, res) => {
   Question.create(req.body)
     .then(() => res.redirect('/'))
 })
+
+router.get('/:id', (req, res) => {
+  Question
+    .findById({_id: req.params.id})
+    .then((question) => {
+      res.render('show', {question})
+    })
+})
+
 module.exports = router

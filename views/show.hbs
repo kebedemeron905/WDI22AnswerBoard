@@ -1,0 +1,9 @@
+<h2>{{question.subject}}</h2>
+<p>{{question.details}}</p>
+<h2>Answers</h2>
+
+{{#each question.answers as |a index|}}
+<p>{{answer}}</p>
+<p>Answered by: {{name}}</p>
+<p>Likes: {{likes}}</p>
+{{/each}}
