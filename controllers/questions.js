@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
 
 router.put('/:id', (req, res) => {
   Question.findOneAndUpdate({_id: req.params.id}, {
-    subject: req.body.subject,
+    name: req.body.subject,
     details: req.body.details,
     date: req.body.date,
     asker: req.body.asker
