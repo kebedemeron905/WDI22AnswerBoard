@@ -1,6 +1,5 @@
-const router = require('express').Router()
-const User = require('../models/user.js')
 var express = require('express')
+const router = require('express').Router()
 var bodyParser = require('body-parser')
 var methodOverride = require('method-override')
 var passport = require('passport')

@@ -11,13 +11,14 @@ const questionsController = require('./controllers/questions')
 const userController = require('./controllers/users')
 
 app.use(morgan('dev'))
-app.use(cookieParser)
+app.use(cookieParser())
 
 app.set('view engine', 'hbs')
 app.use(parser.urlencoded({ extended: true }))
 app.use(methodOverride('_method'))
 app.use('/assets', express.static('public'))
 
+app.use(session({ secret: 'WDI-GENERAL-ASSEMBLY-EXPRESS' }))
 app.use(flash())
 
 const passport = require('passport')
