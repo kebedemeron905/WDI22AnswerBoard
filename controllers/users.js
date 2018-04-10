@@ -19,3 +19,5 @@ router.post('/signup', (req, res) => {
   })
   return signupStrategy(res, res)
 })
+
+module.exports = router
