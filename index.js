@@ -8,6 +8,7 @@ const morgan = require('morgan')
 const cookieParser = require('cookie-parser')
 const session = require('express-session')
 const questionsController = require('./controllers/questions')
+const userController = require('./controllers/users')
 
 app.use(morgan('dev'))
 app.use(cookieParser)
@@ -31,6 +32,7 @@ app.use(function (req, res, next) {
 })
 
 app.use('/', questionsController)
+app.use('/user', userController)
 
 app.listen(4004, () => {
   console.log('app listening on http://localhost:4004/')
