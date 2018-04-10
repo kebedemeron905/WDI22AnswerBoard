@@ -13,10 +13,24 @@ router.get('/signup', (req, res) => {
 router.post('/signup', (req, res) => {
   const signupStrategy = passport.authenticate('local-signup', {
     successRedirect: '/',
-    failureRedirect: '/signup',
+    failureRedirect: '/user/signup',
     failureFlash: true
   })
-  return signupStrategy(res, res)
+  return signupStrategy(req, res)
+})
+
+router.post('/login', (req, res) => {
+  const loginStrategy = passport.authenticate('local-login', {
+    successRedirect: '/',
+    failureRedirect: '/user/login',
+    failureFlash: true
+
+  })
+  return loginStrategy(req, res)
+})
+
+router.get('/login', (req, res) => {
+  res.render('login.hbs', { message: req.flash('loginMessage') })
 })
 
 module.exports = router
