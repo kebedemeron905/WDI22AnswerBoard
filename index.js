@@ -14,6 +14,7 @@ app.use(morgan('dev'))
 app.use(cookieParser())
 
 app.set('view engine', 'hbs')
+app.set('port', process.env.PORT || 3001)
 app.use(parser.urlencoded({ extended: true }))
 app.use(methodOverride('_method'))
 app.use('/assets', express.static('public'))
@@ -35,6 +36,10 @@ app.use(function (req, res, next) {
 app.use('/', questionsController)
 app.use('/user', userController)
 
-app.listen(4004, () => {
-  console.log('app listening on http://localhost:4004/')
+app.listen(app.get('port'), () => {
+  console.log(`Running! Port: ${app.get('port')}`)
 })
+
+// app.listen(4004, () => {
+//   console.log('app listening on http://localhost:4004/')
+// })
